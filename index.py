@@ -4,52 +4,130 @@
 print("Content-type:text/html")
 print("")
 print("""
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Mess Manager</title>
-        <style>
-            body
-            {
-                text-align: center;
-            }
+    <style>
+        form {
+            margin-top:60px;   
+        }
 
-            #log
-            {
-                margin-top: 15%;
-                height: 32%;
-                width: 30%;
-                background-color: aqua;
-                margin-left: 34%;
+        body {
+            background-image: url('images/food.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            margin-top:70px;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+
+        .btn{
+            width: auto;
+            padding: 10px 18px;
+            background: black;
+            color: white;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin-top:20px;
+        }
+
+        img.avatar {
+            width: 25%;
+            border-radius: 8px;
+            float:left;
+        }
+
+        .container {
+            padding: 0px;
+        }
+
+        #login_id {
+            border-radius: 25px;
+            width:200px;
+            height:20px;
+            padding:8px;
+        }
+
+        #login_pass {
+            border-radius: 25px;
+            width:200px;
+            height:20px;
+            padding:8px;
+        }
+
+        h1 {
+            color:grey;
+            font-size: 40px;
+            font-weight: 900;
+        }
+
+        .D {
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        @media screen and (max-width: 300px) {
+            span.login_pass {
+            display: block;
+            float: none;
             }
-            #loginhead
-            {
-            
-                
-            }
-        </style>
-    </head>
+        }
+    </style>
 
     <body>
-        <div id="log">
-            
-           <div id="loginhead"> <h2>LOGIN</h2>  </div>
-            <br/><br/>
-            <form method="POST" action="regi.py">
-            Login ID: <input type="text" name="login_id" id="login_id"><br/><br/>
-            Password: <input type="password" name="login_pass" id="login_pass"><br/><br/>
-            <input type="submit" value="SUBMIT" name="submit" > 
-            </form>
-        </div><br/>
-        <a href="./signup.py">Dont have an account yet? Join now!</a>
-    
+        <form method="POST" action="regi.py">
+            <h1 id="heading">Welcome Folks!</h1>
+            <div class="imgcontainer">
+                <img src="images/lo.png" alt="Avatar" class="avatar" height="280" width="320">
+            </div>
+            <div class="container">
+                <table cellpadding="8px" cellspacing="0px">
+                    <tr>
+                        <td><label class="D"><b>User ID</b></label></td>
+                        <td><input type="text" placeholder="Enter User ID" name="login_id" id="login_id" required></td>
+                    </tr><br>
+                    <tr>
+                        <td><label class="D"><b>Password</b></label></td>
+                        <td><input type="password" placeholder="Enter Password" name="login_pass" id="login_pass" required></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="container">
+                <table cellspacing="10px">
+                    <tr>
+                        <td><button type="submit" class="btn" value="SUBMIT" name="submit">Login</td>
+                        <td><button type="submit" class="btn" value="SIGNUP"><a href="signup.py" class="btn">SIGN UP</a></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+
         <script>
             $(window).on('popstate', function(event) {
-     alert("pop");
-    });
-        <script>
-
-
+                alert("pop");
+            });
+        </script>
 """)
+
 import cgi, cgitb, mysql.connector
 cgitb.enable()
 obj=cgi.FieldStorage()
@@ -76,7 +154,6 @@ if submit!=None:
     
 
 print('''
-
 </body>
 </html>
 ''')
