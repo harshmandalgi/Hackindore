@@ -1,0 +1,36 @@
+The application is witten using Python-CGI.
+
+Requirements posed for the project:
+1.Interfaces for both Mess Admin and Students.
+2.Ability for Mess Admin to upload daily menu on application.
+3.Ability to choose for Students whether they want to eat or not.
+4.Reception of this feedback by students to the Mess Admin.
+
+Userflow:
+There are two entry points for users into the application:
+1.1: Login Page(for registered Users= both admin and students)
+1.2: Signup Page(for new Users= only students)
+There are two separate pages for Mess Admin and Student.
+Successful Registration on Sign Up page leads  the user to Login Page.
+Logging out of their respective interfaces leads both Admins and Students to the Login Page again.
+
+Base of project:
+The Web Application is based on the concept of Python-CGI web development.
+Python, as we all know is
+High Level Language
+Modular
+Portable
+Python provides large standard libraries like Web Service Tools, OS Interfaces, etc.
+
+The Web Application is based on the concept of Python-CGI web development.
+Python, as we all know is
+High Level Language
+Modular
+Portable
+Python provides large standard libraries like Web Service Tools, OS Interfaces, etc.
+
+SERVICES PROVIDED BY THE APP
+Admins can add Daily Menus and can update them on the same day too. He/She can also upload Menus for upcoming days also. 
+Students will get to see the Menu meant for the current day and they can send their feedback regarding to the menu if they like it or not.
+Admins get to see the responses posted by the students respective to the current day’s Menu. 
+The App can support more than one Admin as the Mess Manager.
